@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#10121c" /><meta name="description" content="Big compute. Tiny pod. Jump, slide and collect your way through an endless datacenter in Jumping Poddy." />
+  <title>Jumping Poddy — Big compute. Tiny pod.</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+</head>
+<body>
+  <main id="app" data-mode="menu">
+    <canvas id="world" aria-label="Jumping Poddy 3D runner"></canvas>
+    <div class="vignette"></div>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Jumping Poddy home"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 2 29 9.5v13L16 30 3 22.5v-13L16 2Z" stroke="currentColor" stroke-width="2.5"/><path d="m3 9.5 13 7.6L29 9.5M16 17v13M9.5 5.8l13 7.5v8" stroke="currentColor" stroke-width="2.5"/></svg><b>runpod</b><span class="brand-divider"></span><span class="arcade">ARCADE</span></a>
+      <div class="top-actions"><span class="best-top">PERSONAL BEST <b id="best-top">00000</b></span><button class="icon-button" id="sound-btn" aria-label="Mute sound" title="Sound on"></button><button class="icon-button hidden" id="pause-btn" aria-label="Pause game" title="Pause (P)">Ⅱ</button></div>
+    </header>
+    <section id="menu" class="menu">
+      <div class="eyebrow"><span class="live-dot"></span> AN ENDLESS COMPUTE ADVENTURE</div>
+      <h1><span>JUMPING</span><strong>PODDY<span class="title-dot">.</span></strong></h1>
+      <p class="intro">Big compute. Tiny pod.<br />Go a little beyond your bandwidth.</p>
+      <button id="start-btn" class="primary-button">LET’S RUN <span>↗</span></button>
+      <div class="start-caption"><span class="key small-key">↵</span> or press enter to start</div>
+      <div class="mission"><span class="chip-symbol">✦</span><div><b>COLLECT. OVERCLOCK. REPEAT.</b><p>Collect 20 resources. Become unstoppable.</p></div></div>
+    </section>
+    <div class="hero-label" id="hero-label"><span class="label-line"></span><span>MEET YOUR RUNNER<b>PODDY / BUILT FOR SPEED</b></span></div>
+    <footer class="menu-footer" id="menu-footer">
+      <div class="control-legend"><div><span class="control-number">01</span><span class="keys"><i>←</i><i>→</i></span><span>SWITCH LANES</span></div><div><span class="control-number">02</span><span class="keys"><i>↑</i></span><span>JUMP</span></div><div><span class="control-number">03</span><span class="keys"><i>↓</i></span><span>SLIDE</span></div></div>
+      <span class="footer-note">NO QUEUE. JUST GO.<span> A LITTLE RUNPOD FAN GAME</span></span>
+    </footer>
+    <section class="hud hidden" id="hud" aria-label="Run statistics">
+      <div class="score-block"><span>RUN SCORE</span><b id="score">00000</b><small><span id="distance">0</span> m <i> / </i> <span id="speed">15</span> m/s</small></div>
+      <div class="resource-block"><div><span class="chip-symbol">✦</span><b id="tokens">0</b><span class="resource-name">RESOURCES</span></div><div class="charge-track"><span id="charge-fill"></span></div><small id="charge-label">0 / 20 TO OVERCLOCK</small></div>
+    </section>
+    <div id="toast" class="toast" role="status"></div>
+    <div id="run-hint" class="run-hint hidden">← → MOVE <span>↑ JUMP</span> ↓ SLIDE</div>
+    <div class="touch-controls hidden" id="touch-controls"><button data-action="left" aria-label="Move left">←</button><button data-action="right" aria-label="Move right">→</button><span></span><button data-action="slide" aria-label="Slide">↓</button><button data-action="jump" aria-label="Jump">↑</button></div>
+    <section class="modal-backdrop hidden" id="pause-panel"><div class="dialog"><span class="eyebrow">COMPUTE ON HOLD</span><h2>TAKE A<br /><em>BREATHER.</em></h2><p>Your GPUs can wait a second.</p><button id="resume-btn" class="primary-button">KEEP RUNNING <span>→</span></button><button id="quit-btn" class="text-button">BACK TO LOBBY</button><div class="dialog-controls">← → move · ↑ / space jump · ↓ slide<br />P / Esc pause · F fullscreen<br />On mobile: swipe or use the buttons</div></div></section>
+    <section class="modal-backdrop hidden" id="over-panel"><div class="dialog"><span class="eyebrow" id="over-eyebrow">CONNECTION INTERRUPTED</span><h2>OUT OF<br /><em>BANDWIDTH.</em></h2><p id="crash-copy">That hardware wasn't going to move itself.</p><div class="results"><div><span>RUN SCORE</span><b id="final-score">0</b></div><div><span>RESOURCES</span><b id="final-tokens">0</b></div><div><span>DISTANCE</span><b id="final-distance">0<small>m</small></b></div></div><div class="record-line" id="record-line"></div><button id="retry-btn" class="primary-button">ONE MORE RUN <span>↗</span></button><button id="home-btn" class="text-button">BACK TO LOBBY</button></div></section>
+    <div id="error-panel" class="error-panel hidden" role="alert"></div>
+  </main>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

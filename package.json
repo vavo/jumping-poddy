@@ -1,0 +1,9 @@
+{
+  "name": "jumping-poddy",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": { "dev": "vite --host 127.0.0.1 --port 5199 --strictPort", "build": "tsc && vite build", "preview": "vite preview --host 127.0.0.1 --port 5200 --strictPort", "test": "node --import tsx --test src/game.test.ts" },
+  "dependencies": { "three": "^0.180.0", "@fontsource/barlow-condensed": "^5.2.6", "@fontsource/dm-sans": "^5.2.6" },
+  "devDependencies": { "@types/three": "^0.180.0", "typescript": "^5.9.2", "vite": "^7.1.7", "tsx": "^4.20.5" }
+}
